@@ -29,16 +29,16 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "Install Step"
+        run: "deno install -gArf jsr:@deno/deployctl"
 
       - name: Build step
-        run: "deno install -gArf jsr:@deno/deployctl"
+        run: "deployctl deploy"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "666xjs-deepsider2a-28"
+          project: "deepsider2a-52"
           entrypoint: "main.ts"
-          root: "Build Step"
-          include: deployctl deploy
-          exclude: Entrypoint
+          root: ""
+          
+          
